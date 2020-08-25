@@ -1,0 +1,19 @@
+// Variables
+$website-width: 1100px;
+$main-color: #2f4a08;
+$light-color: #f4f4f4;
+$medium-color: #f1ebcb;
+$dark-color: #122008;
+$overlay-color: rgba(18, 32, 8, 0.85);
+$bg-image: url('../img/main-header.jpg');
+$bg-image-about: url('../img/about-header.jpg');
+$bg-image-contact: url('../img/contact-header.jpg');
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}

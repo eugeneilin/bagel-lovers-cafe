@@ -1,0 +1,22 @@
+{
+  "name": "bagel-lovers-cafe",
+  "version": "1.0.0",
+  "description": "website remake for BLC",
+  "main": "main.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugeneilin/bagel-lovers-cafe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eugeneilin/bagel-lovers-cafe/issues"
+  },
+  "homepage": "https://github.com/eugeneilin/bagel-lovers-cafe#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
