@@ -6,7 +6,7 @@
 
 // Cafe Info
 #cafe-info {
-  .grid {
+  .grid-w-aside {
     aside {
       .hours {
         display: grid;
@@ -21,10 +21,6 @@
 
 // Menu
 #menu {
-  .lead:last-of-type {
-    padding-top: 1rem;
-  }
-
   .menu-img-container {
     display: grid;
   }
@@ -34,12 +30,20 @@
 #catering {
   .catering-img-container {
     display: grid;
+
+    div:nth-child(2) {
+      border-top: 1px solid $medium-color;
+    }
+
+    div:nth-child(3) {
+      border-top: 1px solid $medium-color;
+    }
   }
 }
 
 // Bagels
 #bagels {
-  .grid {
+  .grid-w-aside {
     & > div {
       img {
         margin: 0 auto;
@@ -56,9 +60,40 @@
     aside {
       .flavors-container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-gap: 0.2rem;
         padding: 1rem 0.2rem;
+      }
+    }
+  }
+}
+
+// Wholesale
+#wholesale {
+  .grid-w-aside {
+    & > div {
+      img {
+        margin: 0 auto;
+        display: block;
+        padding: 0.5rem 0;
+      }
+
+      ul {
+        list-style: initial;
+        padding-left: 2rem;
+      }
+    }
+
+    aside {
+      .flavors-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0.2rem;
+        padding: 1rem 0.2rem;
+      }
+
+      .pastries {
+        padding-top: 1rem;
       }
     }
   }
@@ -77,48 +112,6 @@
 
     p {
       padding: 0.3rem;
-    }
-
-    .social {
-      padding-top: 1rem;
-
-      a:hover {
-        color: inherit;
-      }
-
-      .fab {
-        margin-right: 1rem;
-        border: 2px $main-color solid;
-        border-radius: 50%;
-        height: 20px;
-        width: 20px;
-        line-height: 20px;
-        text-align: center;
-        padding: 0.5rem;
-        cursor: pointer;
-
-        &:hover {
-          background: #fff;
-          transition: background ease-in-out 0.1s;
-        }
-      }
-
-      .fa-viber:hover {
-        color: #665cac;
-        transition: color ease-in-out 0.1s;
-      }
-      .fa-youtube:hover {
-        color: #ff0000;
-        transition: color ease-in-out 0.1s;
-      }
-      .fa-facebook:hover {
-        color: #1877f2;
-        transition: color ease-in-out 0.1s;
-      }
-      .fa-instagram:hover {
-        color: #833ab4;
-        transition: color ease-in-out 0.1s;
-      }
     }
   }
 }

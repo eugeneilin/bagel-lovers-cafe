@@ -81,6 +81,9 @@ img {
 .py-4 {
   padding: 4rem 0; }
 
+.pt-1 {
+  padding-top: 1rem; }
+
 .my-1 {
   margin: 1rem 0; }
 
@@ -114,13 +117,42 @@ img {
   margin: 0 auto 1rem; }
 
 .grid {
+  display: grid;
+  grid-gap: 0.5rem; }
+
+.grid-w-aside {
   display: grid; }
-  .grid aside {
+  .grid-w-aside aside {
     text-align: center; }
-    .grid aside .bold:first-of-type {
+    .grid-w-aside aside .bold:first-of-type {
       padding: 0; }
-    .grid aside p.bold {
+    .grid-w-aside aside p.bold {
       padding-top: 1rem; }
+
+.social {
+  padding-top: 1rem; }
+  .social a:first-of-type {
+    margin-right: 1rem; }
+  .social a:hover {
+    color: inherit; }
+  .social .fab {
+    border: 2px #2f4a08 solid;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    text-align: center;
+    padding: 0.5rem;
+    cursor: pointer; }
+    .social .fab:hover {
+      background: #fff;
+      transition: background ease-in-out 0.1s; }
+  .social .fa-facebook:hover {
+    color: #1877f2;
+    transition: color ease-in-out 0.1s; }
+  .social .fa-instagram:hover {
+    color: #833ab4;
+    transition: color ease-in-out 0.1s; }
 
 .hb-menu-wrap {
   position: fixed;
@@ -173,7 +205,8 @@ img {
       flex: none;
       width: 80%;
       height: 2px;
-      background: #fff;
+      background: #2f4a08;
+      box-shadow: 0 0 10px #122008;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -183,6 +216,7 @@ img {
       .hb-menu-wrap .hamburger > div:before, .hb-menu-wrap .hamburger > div:after {
         content: '';
         position: absolute;
+        box-shadow: 0 0 10px #122008;
         z-index: 1;
         top: -10px;
         width: 100%;
@@ -284,36 +318,55 @@ img {
     content: '<';
     left: 0; }
 
-#cafe-info .grid aside .hours {
+#cafe-info .grid-w-aside aside .hours {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0;
   width: 60%;
   margin: 0 auto; }
 
-#menu .lead:last-of-type {
-  padding-top: 1rem; }
-
 #menu .menu-img-container {
   display: grid; }
 
 #catering .catering-img-container {
   display: grid; }
+  #catering .catering-img-container div:nth-child(2) {
+    border-top: 1px solid #f1ebcb; }
+  #catering .catering-img-container div:nth-child(3) {
+    border-top: 1px solid #f1ebcb; }
 
-#bagels .grid > div img {
+#bagels .grid-w-aside > div img {
   margin: 0 auto;
   display: block;
   padding: 1rem 0; }
 
-#bagels .grid > div ul {
+#bagels .grid-w-aside > div ul {
   list-style: initial;
   padding-left: 2rem; }
 
-#bagels .grid aside .flavors-container {
+#bagels .grid-w-aside aside .flavors-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 0.2rem;
   padding: 1rem 0.2rem; }
+
+#wholesale .grid-w-aside > div img {
+  margin: 0 auto;
+  display: block;
+  padding: 0.5rem 0; }
+
+#wholesale .grid-w-aside > div ul {
+  list-style: initial;
+  padding-left: 2rem; }
+
+#wholesale .grid-w-aside aside .flavors-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.2rem;
+  padding: 1rem 0.2rem; }
+
+#wholesale .grid-w-aside aside .pastries {
+  padding-top: 1rem; }
 
 #main-footer {
   color: #2f4a08; }
@@ -325,53 +378,46 @@ img {
     padding: 1rem; }
     #main-footer .footer-content p {
       padding: 0.3rem; }
-    #main-footer .footer-content .social {
-      padding-top: 1rem; }
-      #main-footer .footer-content .social a:hover {
-        color: inherit; }
-      #main-footer .footer-content .social .fab {
-        margin-right: 1rem;
-        border: 2px #2f4a08 solid;
-        border-radius: 50%;
-        height: 20px;
-        width: 20px;
-        line-height: 20px;
-        text-align: center;
-        padding: 0.5rem;
-        cursor: pointer; }
-        #main-footer .footer-content .social .fab:hover {
-          background: #fff;
-          transition: background ease-in-out 0.1s; }
-      #main-footer .footer-content .social .fa-viber:hover {
-        color: #665cac;
-        transition: color ease-in-out 0.1s; }
-      #main-footer .footer-content .social .fa-youtube:hover {
-        color: #ff0000;
-        transition: color ease-in-out 0.1s; }
-      #main-footer .footer-content .social .fa-facebook:hover {
-        color: #1877f2;
-        transition: color ease-in-out 0.1s; }
-      #main-footer .footer-content .social .fa-instagram:hover {
-        color: #833ab4;
-        transition: color ease-in-out 0.1s; }
 
 @media (min-width: 768px) {
-  .grid {
+  .grid-w-aside {
     grid-template-columns: 5fr 2fr;
     grid-gap: 1.5rem; }
-    .grid aside {
+    .grid-w-aside aside {
       text-align: left; }
   .image-carousel {
     height: 100vh; }
     .image-carousel .inner img {
       height: 100vh; }
-  #cafe-info .grid aside .hours {
+  #cafe-info .grid-w-aside aside .hours {
     width: 100%; }
+  #menu .grid-w-aside aside {
+    position: relative; }
+    #menu .grid-w-aside aside img {
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block; }
   #menu .menu-img-container {
     grid-template-columns: 1fr 1fr; }
   #catering .catering-img-container {
     grid-template-columns: 1fr 1fr 1fr; }
-  #bagels .grid > div img {
+    #catering .catering-img-container div:nth-child(2) {
+      border: none; }
+    #catering .catering-img-container div:nth-child(3) {
+      border: none; }
+  #bagels .grid-w-aside > div img {
     width: 50%; }
-  #bagels .grid aside .flavors-container {
-    grid-template-columns: 1fr 1fr; } }
+  #bagels .grid-w-aside aside .flavors-container {
+    grid-template-columns: 1fr 1fr; }
+  #wholesale .grid-w-aside .grid {
+    grid-template-columns: 2fr 2fr; }
+  #wholesale .grid-w-aside > div img {
+    margin-top: 4rem; }
+  #main-footer .footer-content {
+    flex-direction: row; }
+    #main-footer .footer-content p {
+      padding: 0; }
+    #main-footer .footer-content .social {
+      padding-top: 0; } }
