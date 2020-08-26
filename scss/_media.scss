@@ -1,7 +1,7 @@
 // Tablets and up
 @media (min-width: 768px) {
   // Utilities
-  .grid {
+  .grid-w-aside {
     grid-template-columns: 5fr 2fr;
     grid-gap: 1.5rem;
 
@@ -23,7 +23,7 @@
 
   // Cafe Info
   #cafe-info {
-    .grid {
+    .grid-w-aside {
       aside {
         .hours {
           width: 100%;
@@ -34,6 +34,19 @@
 
   // Menu
   #menu {
+    .grid-w-aside {
+      aside {
+        position: relative;
+
+        img {
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: block;
+        }
+      }
+    }
     .menu-img-container {
       grid-template-columns: 1fr 1fr;
     }
@@ -43,12 +56,20 @@
   #catering {
     .catering-img-container {
       grid-template-columns: 1fr 1fr 1fr;
+
+      div:nth-child(2) {
+        border: none;
+      }
+
+      div:nth-child(3) {
+        border: none;
+      }
     }
   }
 
   // Bagels
   #bagels {
-    .grid {
+    .grid-w-aside {
       & > div {
         img {
           width: 50%;
@@ -59,6 +80,36 @@
         .flavors-container {
           grid-template-columns: 1fr 1fr;
         }
+      }
+    }
+  }
+
+  // Wholesale
+  #wholesale {
+    .grid-w-aside {
+      .grid {
+        grid-template-columns: 2fr 2fr;
+      }
+
+      & > div {
+        img {
+          margin-top: 4rem;
+        }
+      }
+    }
+  }
+
+  // Footer
+  #main-footer {
+    .footer-content {
+      flex-direction: row;
+
+      p {
+        padding: 0;
+      }
+
+      .social {
+        padding-top: 0;
       }
     }
   }
