@@ -1,0 +1,65 @@
+// Tablets and up
+@media (min-width: 768px) {
+  // Utilities
+  .grid {
+    grid-template-columns: 5fr 2fr;
+    grid-gap: 1.5rem;
+
+    aside {
+      text-align: left;
+    }
+  }
+
+  // Image Carousel
+  .image-carousel {
+    height: 100vh;
+
+    .inner {
+      img {
+        height: 100vh;
+      }
+    }
+  }
+
+  // Cafe Info
+  #cafe-info {
+    .grid {
+      aside {
+        .hours {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // Menu
+  #menu {
+    .menu-img-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  // Catering
+  #catering {
+    .catering-img-container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  // Bagels
+  #bagels {
+    .grid {
+      & > div {
+        img {
+          width: 50%;
+        }
+      }
+
+      aside {
+        .flavors-container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
+  }
+}

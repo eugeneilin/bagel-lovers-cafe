@@ -3,7 +3,8 @@
   padding: 0;
   font-family: 'quicksand', sans-serif;
   font-weight: 200;
-  font-style: normal; }
+  font-style: normal;
+  scroll-behavior: smooth; }
 
 body {
   line-height: 1.6;
@@ -11,7 +12,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #333; }
+  color: #2f4a08;
+  font-weight: 500; }
+
+a:hover {
+  color: #f1ebcb; }
 
 ul {
   list-style: none; }
@@ -30,58 +35,36 @@ img {
   margin: auto;
   overflow: hidden; }
 
-.btn-main, .btn-light, .btn-medium, .btn-dark {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  transition: all 0.5s;
-  border: none;
-  cursor: pointer; }
-
-.btn-main {
-  color: #fff;
-  background-color: #2f4a08; }
-
-.btn-light {
-  color: #2f4a08;
-  background-color: #f4f4f4; }
-
-.btn-medium {
-  color: #f4f4f4;
-  background-color: #f1ebcb; }
-
-.btn-dark {
-  color: #f4f4f4;
-  background-color: #122008; }
-
-button[class^='btn-']:hover,
-a[class^='btn-']:hover,
-input[class^='btn-']:hover {
-  background-color: #f4f4f4;
-  color: #000; }
-
 .bg-main {
   background: #2f4a08;
-  color: #fff; }
+  color: #f8f8f8; }
 
 .bg-dark {
   background: #122008;
-  color: #fff; }
+  color: #f8f8f8; }
 
 .bg-light {
-  background: #f4f4f4;
-  color: #000; }
+  background: #f8f8f8;
+  color: #122008; }
 
 .bg-medium {
   background: #f1ebcb;
-  color: #000; }
+  color: #122008; }
 
 .bg-white {
   background: #fff;
-  color: #000; }
+  color: #122008; }
 
 .lead {
-  font-size: 1.3rem;
-  margin-bottom: 2rem; }
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem; }
+
+.bold {
+  font-weight: bold;
+  color: #2f4a08; }
+
+.uppercase {
+  text-transform: uppercase; }
 
 .text-center {
   text-align: center; }
@@ -115,8 +98,13 @@ input[class^='btn-']:hover {
   display: block;
   padding-bottom: 0.5rem;
   text-align: center;
-  font-weight: 100;
-  text-transform: uppercase; }
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #2f4a08; }
+  .section-title:before {
+    content: '~ '; }
+  .section-title:after {
+    content: ' ~'; }
 
 .bottom-line {
   height: 2px;
@@ -126,13 +114,13 @@ input[class^='btn-']:hover {
   margin: 0 auto 1rem; }
 
 .grid {
-  display: grid;
-  grid-gap: 0.5rem;
-  margin: 0 0.5rem; }
-  .grid-item {
-    padding: 2rem;
-    background: #f4f4f4;
-    border-radius: 5px; }
+  display: grid; }
+  .grid aside {
+    text-align: center; }
+    .grid aside .bold:first-of-type {
+      padding: 0; }
+    .grid aside p.bold {
+      padding-top: 1rem; }
 
 .hb-menu-wrap {
   position: fixed;
@@ -234,8 +222,7 @@ input[class^='btn-']:hover {
       list-style: none;
       color: #fff;
       font-size: 1.5rem;
-      padding: 2rem 7rem;
-      text-transform: uppercase; }
+      padding: 2rem 7rem; }
     .hb-menu-wrap .menu a {
       color: inherit;
       text-decoration: none;
@@ -297,6 +284,37 @@ input[class^='btn-']:hover {
     content: '<';
     left: 0; }
 
+#cafe-info .grid aside .hours {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  width: 60%;
+  margin: 0 auto; }
+
+#menu .lead:last-of-type {
+  padding-top: 1rem; }
+
+#menu .menu-img-container {
+  display: grid; }
+
+#catering .catering-img-container {
+  display: grid; }
+
+#bagels .grid > div img {
+  margin: 0 auto;
+  display: block;
+  padding: 1rem 0; }
+
+#bagels .grid > div ul {
+  list-style: initial;
+  padding-left: 2rem; }
+
+#bagels .grid aside .flavors-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.2rem;
+  padding: 1rem 0.2rem; }
+
 #main-footer {
   color: #2f4a08; }
   #main-footer .footer-content {
@@ -305,10 +323,12 @@ input[class^='btn-']:hover {
     justify-content: space-between;
     align-items: center;
     padding: 1rem; }
-    #main-footer .footer-content * {
+    #main-footer .footer-content p {
       padding: 0.3rem; }
     #main-footer .footer-content .social {
       padding-top: 1rem; }
+      #main-footer .footer-content .social a:hover {
+        color: inherit; }
       #main-footer .footer-content .social .fab {
         margin-right: 1rem;
         border: 2px #2f4a08 solid;
@@ -334,3 +354,24 @@ input[class^='btn-']:hover {
       #main-footer .footer-content .social .fa-instagram:hover {
         color: #833ab4;
         transition: color ease-in-out 0.1s; }
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 5fr 2fr;
+    grid-gap: 1.5rem; }
+    .grid aside {
+      text-align: left; }
+  .image-carousel {
+    height: 100vh; }
+    .image-carousel .inner img {
+      height: 100vh; }
+  #cafe-info .grid aside .hours {
+    width: 100%; }
+  #menu .menu-img-container {
+    grid-template-columns: 1fr 1fr; }
+  #catering .catering-img-container {
+    grid-template-columns: 1fr 1fr 1fr; }
+  #bagels .grid > div img {
+    width: 50%; }
+  #bagels .grid aside .flavors-container {
+    grid-template-columns: 1fr 1fr; } }

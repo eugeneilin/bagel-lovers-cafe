@@ -1,8 +1,68 @@
-@import 'reset';
 @import 'config';
+@import 'reset';
 @import 'utilities';
 @import 'hb-menu';
 @import 'image-carousel';
+
+// Cafe Info
+#cafe-info {
+  .grid {
+    aside {
+      .hours {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+        width: 60%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+// Menu
+#menu {
+  .lead:last-of-type {
+    padding-top: 1rem;
+  }
+
+  .menu-img-container {
+    display: grid;
+  }
+}
+
+// Catering
+#catering {
+  .catering-img-container {
+    display: grid;
+  }
+}
+
+// Bagels
+#bagels {
+  .grid {
+    & > div {
+      img {
+        margin: 0 auto;
+        display: block;
+        padding: 1rem 0;
+      }
+
+      ul {
+        list-style: initial;
+        padding-left: 2rem;
+      }
+    }
+
+    aside {
+      .flavors-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 0.2rem;
+        padding: 1rem 0.2rem;
+      }
+    }
+  }
+}
 
 // Footer
 #main-footer {
@@ -15,12 +75,16 @@
     align-items: center;
     padding: 1rem;
 
-    * {
+    p {
       padding: 0.3rem;
     }
 
     .social {
       padding-top: 1rem;
+
+      a:hover {
+        color: inherit;
+      }
 
       .fab {
         margin-right: 1rem;
@@ -59,5 +123,5 @@
   }
 }
 
-// // Import Media Queries
-// @import 'media';
+// Import Media Queries
+@import 'media';
