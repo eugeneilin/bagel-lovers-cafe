@@ -19,10 +19,77 @@
   }
 }
 
+// Old Menu
+// #menu {
+//   .menu-img-container {
+//     display: grid;
+//   }
+// }
+
 // Menu
 #menu {
-  .menu-img-container {
-    display: grid;
+  .container {
+    .btn-container {
+      margin-bottom: 4rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 0.6rem;
+
+      .filter-btn {
+        background: transparent;
+        border: 1px solid $medium-color;
+        font-size: 1rem;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        padding: 0.375rem 0.75rem;
+        color: $main-color;
+        cursor: pointer;
+        transition: all 0.3s linear;
+      }
+      .filter-btn:hover {
+        background: $medium-color;
+      }
+    }
+
+    .menu-wrapper {
+      margin: 0 auto;
+      display: grid;
+      gap: 3rem 2rem;
+      justify-items: center;
+
+      .menu-item {
+        display: grid;
+        gap: 1rem 2rem;
+
+        .img {
+          object-fit: cover;
+          height: 200px;
+          border: 0.25rem solid $medium-color;
+          border-radius: 5px;
+        }
+
+        .item-info {
+          div {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted $medium-color;
+
+            h4 {
+              margin-bottom: 0.5rem;
+            }
+
+            .price {
+              padding-left: 0.6rem;
+            }
+          }
+
+          .item-text {
+            padding-top: 1rem;
+          }
+        }
+      }
+    }
   }
 }
 

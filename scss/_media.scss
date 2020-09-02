@@ -32,23 +32,44 @@
     }
   }
 
+  // Old Menu
+  // #menu {
+  //   .grid-w-aside {
+  //     aside {
+  //       position: relative;
+
+  //       img {
+  //         height: 100%;
+  //         position: absolute;
+  //         left: 0;
+  //         top: 0;
+  //         display: block;
+  //       }
+  //     }
+  //   }
+  //   .menu-img-container {
+  //     grid-template-columns: 1fr 1fr;
+  //   }
+  // }
+
   // Menu
   #menu {
-    .grid-w-aside {
-      aside {
-        position: relative;
+    .container {
+      .btn-container {
+        grid-template-columns: repeat(5, 1fr);
+      }
 
-        img {
-          height: 100%;
-          position: absolute;
-          left: 0;
-          top: 0;
-          display: block;
+      .menu-wrapper {
+        .menu-item {
+          grid-template-columns: 1fr 1fr;
+          gap: 0 1.25rem;
+          max-width: 100%;
+
+          .img {
+            height: 175px;
+          }
         }
       }
-    }
-    .menu-img-container {
-      grid-template-columns: 1fr 1fr;
     }
   }
 
@@ -110,6 +131,29 @@
 
       .social {
         padding-top: 0;
+      }
+    }
+  }
+}
+
+// iPad Pro and Desktops
+@media (min-width: 900px) {
+  #menu {
+    .container {
+      .btn-container {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .menu-wrapper {
+        grid-template-columns: 1fr 1fr;
+
+        .menu-item {
+          .img {
+            height: 150px;
+          }
+        }
       }
     }
   }
