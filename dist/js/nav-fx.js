@@ -3,8 +3,8 @@ const mainNav = document.getElementById('main-nav');
 // Shrink navbar when user scrolls on desktop
 function shrinkNavbar() {
   if (
-    (document.body.scrollTop > 250 && window.innerWidth > 900) ||
-    (document.documentElement.scrollTop > 250 && window.innerWidth > 900)
+    (window.innerWidth > 900 && document.body.scrollTop > 250) ||
+    (window.innerWidth > 900 && document.documentElement.scrollTop > 250)
   ) {
     document.getElementById('logo').style.marginTop = '-100px';
   } else {
@@ -44,6 +44,7 @@ function switchCurrentClass() {
     sectionLink.classList.remove('current')
   );
   sectionLinks[i].classList.add('current');
+  // note: consider putting the above "65" into a variable for later use
 }
 
 switchCurrentClass();
@@ -68,6 +69,7 @@ function closeHBMenu() {
   const toggler = document.querySelector('.toggler');
 
   toggler.click();
+  // not the best practice to programmatically click on an element; can be problematic for some mobiles or browsers
 }
 
 // TODO: Add space above the sections, when user clicks on links in nav
