@@ -7,10 +7,7 @@
       src="https://kit.fontawesome.com/3753b9f2a4.js"
       crossorigin="anonymous"
     ></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/jgr8qaq.css" />
     <link rel="stylesheet" href="css/main.css" />
     <title>Bagel Lovers Cafe</title>
@@ -25,7 +22,8 @@
       <div class="menu">
         <div>
           <div>
-            <ul class="uppercase">
+            <ul class="uppercase" onclick='closeHBMenu();
+            '>
               <a href="#cafe-info"><li>Cafe</li></a>
               <a href="#menu"><li>Menu</li></a>
               <a href="#catering"><li>Catering</li></a>
@@ -37,6 +35,23 @@
         </div>
       </div>
     </div>
+
+    <!-- Navbar -->
+    <nav id="main-nav" class="top">
+      <div class="container">
+        <a href="#">
+          <h1 id="logo">Bagel Lovers Cafe</h1>
+        </a>
+        <ul>
+          <a href="#cafe-info" class='section-link'><li>Cafe</li></a>
+          <a href="#menu" class='section-link'><li>Menu</li></a>
+          <a href="#catering" class='section-link'><li>Catering</li></a>
+          <a href="#bagels" class='section-link'><li>Bagels</li></a>
+          <a href="#wholesale" class='section-link'><li>Wholesale</li></a>
+          <a href="#gallery" class='section-link'><li>Gallery</li></a>
+        </ul>
+      </div>
+    </nav>
     
     <!-- Header -->
     <header id="top">
@@ -353,6 +368,9 @@
         </div>
       </div>
     </footer>
+
+    <!-- Nav Effects -->
+    <script src="js/nav-fx.js"></script>
 
     <!-- Image Carousel Controls -->
     <script src="js/image-carousel.js"></script>

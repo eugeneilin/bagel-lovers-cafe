@@ -4,6 +4,55 @@
 @import 'hb-menu';
 @import 'image-carousel';
 
+// Main Nav
+#main-nav {
+  padding-bottom: 1rem;
+  transition: 0.8s;
+
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 5;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 1rem;
+
+    a {
+      h1 {
+        font-family: 'Monsieur La Doulaise', cursive;
+        font-size: 1.9rem;
+        color: $medium-color;
+        letter-spacing: 2px;
+        padding-top: 1rem;
+      }
+    }
+
+    ul {
+      display: none;
+    }
+  }
+}
+
+// Overlay over the image carousel
+#top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $width;
+  height: $height;
+  background-image: linear-gradient(
+    rgba(18, 32, 8, 0.8),
+    transparent,
+    transparent,
+    transparent
+  );
+  z-index: 1;
+}
+
 // Cafe Info
 #cafe-info {
   .grid-w-aside {

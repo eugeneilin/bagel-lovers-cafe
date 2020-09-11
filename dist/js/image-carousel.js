@@ -10,7 +10,9 @@ let carousels = document.getElementsByClassName('image-carousel');
   let width = 100;
   let unit = 'vw';
   let bubbles = [];
+  let myTimer = setInterval(slideShow, 4000);
 
+  // Create bubble controllers
   for (let i = 0; i < imgs.length; i++) {
     let b = document.createElement('span');
     b.classList.add('bubble');
@@ -18,12 +20,16 @@ let carousels = document.getElementsByClassName('image-carousel');
     bubbles.push(b);
 
     b.addEventListener('click', function () {
+      clearInterval(myTimer);
+      myTimer = setInterval(slideShow, 4000);
+
       currentImageIndex = i;
-      switchImg();
+      switchActiveImgBtn();
     });
   }
 
-  function switchImg() {
+  // Give corresponding bubble 'active' class
+  function switchActiveImgBtn() {
     inner.style.left = -width * currentImageIndex + unit;
 
     bubbles.forEach(function (b, i) {
@@ -35,25 +41,44 @@ let carousels = document.getElementsByClassName('image-carousel');
     });
   }
 
+  // Next Btn
   next.addEventListener('click', function () {
+    clearInterval(myTimer);
+    myTimer = setInterval(slideShow, 4000);
+
     currentImageIndex++;
 
     if (currentImageIndex >= imgs.length) {
       currentImageIndex = 0;
     }
 
-    switchImg();
+    switchActiveImgBtn();
   });
 
+  // Prev Btn
   prev.addEventListener('click', function () {
+    clearInterval(myTimer);
+    myTimer = setInterval(slideShow, 4000);
+
     currentImageIndex--;
 
     if (currentImageIndex < 0) {
       currentImageIndex = imgs.length - 1;
     }
 
-    switchImg();
+    switchActiveImgBtn();
   });
 
-  switchImg();
+  // Automatic slideshow
+  function slideShow() {
+    currentImageIndex++;
+
+    if (currentImageIndex >= imgs.length) {
+      currentImageIndex = 0;
+    }
+
+    switchActiveImgBtn();
+  }
+
+  switchActiveImgBtn();
 });

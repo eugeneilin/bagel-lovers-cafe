@@ -45,6 +45,21 @@
       opacity: 1;
       transition: opacity 0.4s ease 0.4s;
     }
+
+    // Hide Menu
+    &:not(:checked) ~ .menu {
+      visibility: hidden;
+    }
+
+    &:not(:checked) ~ .menu > div {
+      transform: scale(0);
+      transition-duration: 0.4s;
+    }
+
+    &:not(:checked) ~ .menu > div > div {
+      opacity: 0;
+      transition: opacity 0.4s ease 0.4s;
+    }
   }
 
   .hamburger {
@@ -65,8 +80,8 @@
       flex: none;
       width: 80%;
       height: 2px;
-      background: $main-color;
-      box-shadow: 0 0 10px $dark-color;
+      background: $medium-color;
+      // box-shadow: 0 0 10px $dark-color;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -77,7 +92,7 @@
       &:after {
         content: '';
         position: absolute;
-        box-shadow: 0 0 10px $dark-color;
+        // box-shadow: 0 0 10px $dark-color;
         z-index: 1;
         top: -10px;
         width: 100%;

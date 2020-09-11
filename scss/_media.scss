@@ -21,6 +21,10 @@
     }
   }
 
+  #top::before {
+    height: 100vh;
+  }
+
   // Cafe Info
   #cafe-info {
     .grid-w-aside {
@@ -138,6 +142,50 @@
 
 // iPad Pro and Desktops
 @media (min-width: 900px) {
+  .hb-menu-wrap {
+    display: none;
+  }
+
+  #main-nav {
+    .container {
+      a {
+        h1 {
+          padding-bottom: 0.5rem;
+          text-align: center;
+          transition: margin-top 1s;
+        }
+      }
+
+      ul {
+        display: flex;
+        justify-content: center;
+
+        .section-link {
+          text-decoration: none;
+          color: $medium-color;
+          text-transform: uppercase;
+          transition: background-color 0.4s;
+          border-radius: 5px;
+          margin: 0 0.2rem;
+
+          &:hover {
+            background-color: $overlay-color;
+            color: $light-color;
+          }
+
+          &.current {
+            background-color: $medium-color;
+            color: $dark-color;
+          }
+
+          li {
+            padding: 0.2rem 1rem;
+          }
+        }
+      }
+    }
+  }
+
   #menu {
     .container {
       .btn-container {

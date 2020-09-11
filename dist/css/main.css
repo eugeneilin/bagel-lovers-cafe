@@ -188,6 +188,14 @@ img {
     .hb-menu-wrap .toggler:checked ~ .menu > div > div {
       opacity: 1;
       transition: opacity 0.4s ease 0.4s; }
+    .hb-menu-wrap .toggler:not(:checked) ~ .menu {
+      visibility: hidden; }
+    .hb-menu-wrap .toggler:not(:checked) ~ .menu > div {
+      transform: scale(0);
+      transition-duration: 0.4s; }
+    .hb-menu-wrap .toggler:not(:checked) ~ .menu > div > div {
+      opacity: 0;
+      transition: opacity 0.4s ease 0.4s; }
   .hb-menu-wrap .hamburger {
     position: absolute;
     top: 2rem;
@@ -205,8 +213,7 @@ img {
       flex: none;
       width: 80%;
       height: 2px;
-      background: #2f4a08;
-      box-shadow: 0 0 10px #122008;
+      background: #f1ebcb;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -216,7 +223,6 @@ img {
       .hb-menu-wrap .hamburger > div:before, .hb-menu-wrap .hamburger > div:after {
         content: '';
         position: absolute;
-        box-shadow: 0 0 10px #122008;
         z-index: 1;
         top: -10px;
         width: 100%;
@@ -236,7 +242,7 @@ img {
     align-items: center;
     justify-content: center; }
     .hb-menu-wrap .menu > div {
-      background: rgba(18, 32, 8, 0.85);
+      background: rgba(18, 32, 8, 0.7);
       border-radius: 50%;
       width: 300vw;
       height: 300vw;
@@ -283,7 +289,8 @@ img {
     bottom: 0;
     left: 0;
     right: 0;
-    margin-bottom: 0.4rem; }
+    margin-bottom: 0.4rem;
+    z-index: 4; }
     .image-carousel .bubbles .bubble {
       margin: 2.5px;
       background-color: white;
@@ -311,13 +318,45 @@ img {
     padding: 1.2rem 0.2rem 1.2rem 0.4rem;
     cursor: pointer;
     opacity: 0.5;
-    transition: opacity 0.1s linear; }
+    transition: opacity 0.1s linear;
+    z-index: 4; }
   .image-carousel .next:hover::after,
   .image-carousel .prev:hover::after {
     opacity: 1; }
   .image-carousel .prev::after {
     content: '<';
     left: 0; }
+
+#main-nav {
+  padding-bottom: 1rem;
+  transition: 0.8s;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 5; }
+  #main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 1rem; }
+    #main-nav .container a h1 {
+      font-family: 'Monsieur La Doulaise', cursive;
+      font-size: 1.9rem;
+      color: #f1ebcb;
+      letter-spacing: 2px;
+      padding-top: 1rem; }
+    #main-nav .container ul {
+      display: none; }
+
+#top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 45vh;
+  background-image: linear-gradient(rgba(18, 32, 8, 0.8), transparent, transparent, transparent);
+  z-index: 1; }
 
 #cafe-info .grid-w-aside aside .hours {
   display: grid;
@@ -430,6 +469,8 @@ img {
     height: 100vh; }
     .image-carousel .inner img {
       height: 100vh; }
+  #top::before {
+    height: 100vh; }
   #cafe-info .grid-w-aside aside .hours {
     width: 100%; }
   #menu .container .btn-container {
@@ -462,6 +503,30 @@ img {
       padding-top: 0; } }
 
 @media (min-width: 900px) {
+  .hb-menu-wrap {
+    display: none; }
+  #main-nav .container a h1 {
+    padding-bottom: 0.5rem;
+    text-align: center;
+    transition: margin-top 1s; }
+  #main-nav .container ul {
+    display: flex;
+    justify-content: center; }
+    #main-nav .container ul .section-link {
+      text-decoration: none;
+      color: #f1ebcb;
+      text-transform: uppercase;
+      transition: background-color 0.4s;
+      border-radius: 5px;
+      margin: 0 0.2rem; }
+      #main-nav .container ul .section-link:hover {
+        background-color: rgba(18, 32, 8, 0.7);
+        color: #f9f9f9; }
+      #main-nav .container ul .section-link.current {
+        background-color: #f1ebcb;
+        color: #122008; }
+      #main-nav .container ul .section-link li {
+        padding: 0.2rem 1rem; }
   #menu .container .btn-container {
     display: flex;
     text-align: center;
