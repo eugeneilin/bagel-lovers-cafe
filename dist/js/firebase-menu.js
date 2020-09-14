@@ -37,7 +37,6 @@ db.collection('menu')
 
     // Display menu items
     function displayMenuItems(menuItems) {
-      console.log(menuItems);
       let displayMenu = menuItems.map(function (item) {
         // const img = storage.ref(item.img);
         // storage
