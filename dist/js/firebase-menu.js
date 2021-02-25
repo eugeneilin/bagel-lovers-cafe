@@ -45,7 +45,7 @@ db.collection('menu')
         //   .getDownloadURL()
         //   .then(function (img) {
         return `<div class="menu-item">
-      <img src=${item.img} class='img'>
+      <!-- <img src=${item.img} class='img'> -->
       <div class="item-info">
         <div>
           <h4>${item.title}</h4>
